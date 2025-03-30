@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = 'dockerhub'           
-        IMAGE_NAME = 'bonnnana/kiii-jenkins'    
+        IMAGE_NAME = 'bojanaandonova/kiii-jenkins'    
     }
 
     stages {
