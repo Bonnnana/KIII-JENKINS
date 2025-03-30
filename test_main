@@ -1,0 +1,2 @@
+This file is to test whether the Docker Image build and push to Docker Hub will happen if the
+changes are on the ‘main’ branch.
