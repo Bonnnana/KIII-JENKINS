@@ -1,0 +1,2 @@
+This file is to thest if the Docker Image build and push to Docker Hub will only happen if the
+changes are on the ‘dev’ branch.
