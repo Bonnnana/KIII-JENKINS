@@ -2,8 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS = 'dockerhub'           
-        IMAGE_NAME = 'bojanaandonova/kiii-jenkins'    
+        IMAGE_NAME = 'bojanaandonova/kiii-jenkins'
     }
 
     stages {
@@ -14,6 +13,9 @@ pipeline {
         }
 
         stage('Build image') {
+            when {
+                branch 'dev'
+            }
             steps {
                 script {
                     dockerImage = docker.build("${IMAGE_NAME}")
@@ -22,9 +24,12 @@ pipeline {
         }
 
         stage('Push image') {
+            when {
+                branch 'dev'
+            }
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', DOCKERHUB_CREDENTIALS) {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                         dockerImage.push("${env.BRANCH_NAME}-${env.BUILD_NUMBER}")
                         dockerImage.push("${env.BRANCH_NAME}-latest")
                     }
