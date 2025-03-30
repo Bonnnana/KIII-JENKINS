@@ -1,2 +1,2 @@
-This file is to thest if the Docker Image build and push to Docker Hub will only happen if the
+This file is to test whether the Docker Image build and push to Docker Hub will happen if the
 changes are on the ‘dev’ branch.
